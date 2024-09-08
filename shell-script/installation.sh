@@ -11,3 +11,5 @@ fi
 
 # Install MySQL using DNF
 dnf install mysql -y
+
+echo "is script proceding without erros"
