@@ -4,7 +4,7 @@
 USERID=$(id -u)
 
 
-echo USERID
+echo $USERID;
 echo "user id printed"
 # # Check if the script is run as root (USERID 0 is root)
 # if [ $USERID -ne 0 ]; then
