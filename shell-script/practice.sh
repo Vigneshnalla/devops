@@ -15,6 +15,7 @@ else
     echo "You are super user."
 fi
 
+echo "install mysql"
 dnf install mysql -y
 
 
