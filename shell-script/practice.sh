@@ -36,9 +36,16 @@ else
     echo "You are super user."
 fi
 
+for i in $@
+    do
+        echo " package to install: $i"
+        dnf list installed $i &>>$LOGFILE
+        if [ $? -eq 0 ]
+        then 
+            echo -e "$Y already installed skipping $N"
+        else
+            dnf install $i -y &>>$LOGFILE
+            VALIDATE $? "installation of $i"
+        fi
 
-dnf install mysql -y
-VALIDATE $? "mysql "
-
-dnf install mysqdafl -y
-VALIDATE $? "mysql "
+done
