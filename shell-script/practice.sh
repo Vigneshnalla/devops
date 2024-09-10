@@ -1,11 +1,32 @@
 #!/bin/bash
 
-echo "practice file"
-
-
-
 
 USERID=$(id -u)
+
+TIMESTAMP=$(date +%F-%H-%M-%S)
+
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+TEMP_SCRIPT_NAME=$(echo $0 | cut -d "." f1)
+
+echo "$TEMP_SCRIPT_NAME"
+echo "$SCRIPT_NAME"
+
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
+
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    then 
+        echo -e " $R $2 failure with status $1 $N"
+    else
+        echo -e " $G $2 Sucess  $N"
+    fi
+}
 
 if [ $USERID -ne 0 ]
 then
@@ -15,13 +36,6 @@ else
     echo "You are super user."
 fi
 
-echo "install mysql"
+
 dnf install mysql -y
-
-
-if [$? -eq 0 ]
-then 
-    "my sql installation sucess"
-else
-    "dnf install mysql -y failure"
-fi
+VALIDATE $? "mysql "
