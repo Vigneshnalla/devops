@@ -39,3 +39,6 @@ fi
 
 dnf install mysql -y
 VALIDATE $? "mysql "
+
+dnf install mysqdafl -y
+VALIDATE $? "mysql "
