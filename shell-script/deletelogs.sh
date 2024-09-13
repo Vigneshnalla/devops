@@ -1,4 +1,4 @@
-SOURCE_DIRECTORY=/tmp/app-logs
+SOURCE_DIRECTORY=temp/app-logs
 
 if [ -d $SOURCE_DIRECTORY ]
 then 
