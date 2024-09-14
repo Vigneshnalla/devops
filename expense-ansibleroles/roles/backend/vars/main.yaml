@@ -2,3 +2,5 @@ login_host: db.vigneshdev.online
 mysql_root_password: ExpenseApp@1
 login_user: root]
 DB_HOST: db.vigneshdev.online
+app_location: /app
+component: backend
