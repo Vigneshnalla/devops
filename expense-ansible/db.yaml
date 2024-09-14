@@ -1,0 +1,27 @@
+- name: configre db server
+  hosts: db 
+  vars:
+    login_host: db.vigneshdev.online
+  become: yes
+  tasks: 
+    - name: installing My sql server 
+      ansible.builtin.dnf:
+        name: mysql-server
+        state: latest
+    - name: start and enable my sql server
+      ansible.builtin.service:
+        name: mysqld
+        state: started
+        enable: true
+    - name: checking db connection
+      community.mysql.mysql_info:
+        login_user: root
+        login_password: ExpenseApp@1
+        login_host: "{{login_host}}"
+        filter: version
+      ignore_errors: yes
+      register: mysql_connection_output
+    - name: status of connecting db
+      ansible.builtin.debug:
+        msg:"{{mysql_connection_output}}"
+    
