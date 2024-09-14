@@ -1,10 +1,10 @@
 - name: loops
   hosts: localhost
   tasks:
-    - name: looping throught list of items
+    - name: Looping through list of items
       ansible.builtin.debug:
-       msg: "item :: {{item}}"
+      msg: "Item :: {{ item }}"
       loop: 
-        -linux
-        -shell
-        -ansible
+        - linux
+        - shell
+        - ansible
