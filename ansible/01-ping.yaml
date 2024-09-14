@@ -1,7 +1,7 @@
-- name: pinging the server -y
+- name: Pinging the DB server
   hosts: db
   tasks:
-    - name: pinging the server 
+    - name: Ping the server
       ansible.builtin.ping:
       register: ping_result
 
