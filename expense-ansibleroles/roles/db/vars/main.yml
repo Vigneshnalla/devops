@@ -1,2 +1,2 @@
 login_host: db.vigneshdev.online
-login_password: ExpenseApp@1
+mysql_root_password: ExpenseApp@1
