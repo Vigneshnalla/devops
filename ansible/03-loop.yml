@@ -3,7 +3,7 @@
   tasks:
     - name: Looping through list of items
       ansible.builtin.debug:
-      msg: "Item :: {{ item }}"
+        msg: "Item :: {{ item }}"
       loop: 
         - linux
         - shell
