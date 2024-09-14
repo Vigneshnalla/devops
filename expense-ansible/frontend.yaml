@@ -21,7 +21,7 @@
       state: directory
   - name: download and extract frotnend code
     ansible.builtin.unarchive:
-      path: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+      src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
       dest: /tmp/frontend.zip
       remote_src: yes
   - name: copy forntend config
