@@ -1,5 +1,5 @@
 - name: configure backend server
   become: yes
   hosts: backend
-  role:
+  roles:
     - backend
