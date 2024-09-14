@@ -2,6 +2,7 @@
   hosts: db 
   vars:
     login_host: db.vigneshdev.online
+    mysql_root_password: ExpenseApp@1
   become: yes
   tasks: 
     - name: installing My sql server 
@@ -22,7 +23,7 @@
 
     - name: checking db connection
       community.mysql.mysql_info:
-        login_user: root
+        login_user: ec2
         login_password: ExpenseApp@1
         login_host: "{{login_host}}"
         filter: version
