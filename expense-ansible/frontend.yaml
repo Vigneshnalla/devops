@@ -26,7 +26,7 @@
       remote_src: yes
   - name: copy forntend config
     ansible.builtin.copy:
-      src: expense.config
+      src: expense.conf
       dest: /etc/nginx.default.d/expense.conf
   - name: restart nginx
     ansible.builtin.service:
