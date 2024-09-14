@@ -1,0 +1,10 @@
+- name: pinging the server -y
+  hosts: web
+  tasks:
+    - name: pinging the server 
+      ansible.builtin.ping:
+      register: ping_result
+
+    - name: Status of servers
+      ansible.builtin.debug:
+        msg: "{{ ping_result }}"
