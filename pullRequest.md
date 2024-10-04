@@ -1,1 +1,2 @@
 added cnnectionDialon in connectionPanel
+removed connection
